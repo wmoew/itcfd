@@ -4,4 +4,5 @@
 [page](https://wmoew.github.io/itcfd/assignment1.html)
 * Week 2 [code](https://github.com/wmoew/itcfd/blob/master/assignment2.html) /
 [page](https://wmoew.github.io/itcfd/assignment2.html)
-*  Week 3
+*  Week 3 [code](https://github.com/wmoew/itcfd/blob/master/assignment3.html) /
+[page](https://wmoew.github.io/itcfd/assignment3.html)
