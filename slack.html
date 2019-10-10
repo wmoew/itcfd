@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slack layout</title>
+	<style type="text/css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+
+		html {
+			font-family: "Roboto", sans-serif;
+		}
+
+		h2, h3, p, .channels {
+			color: lightgrey;
+		}
+
+		body {
+			margin: 0;
+		}
+
+		header .resizeArea {
+			display: flex;
+			justify-content: center;
+			margin-top: 10px;
+
+		}
+
+		header .column1 {
+			background-color: #2B002C;
+		    top: -1px;
+		    height: 100%;
+		    box-sizing: border-box;
+		    width: 124px;
+		    position: absolute;
+		    margin: 0;
+		    left: -1px;
+		}
+
+		nav .column2 {
+			background-color: #3E0F3F;
+			top: -1px;
+		    height: 100%;
+		    box-sizing: border-box;
+		    width: 248px;
+		    position: absolute;
+		    margin: 0;
+		    left: 121px;
+		}
+
+		header .column3 {
+			border-bottom: solid;
+			border-width: 1px;
+			left: 367px;
+			top: -1px;
+		    height: 107px;
+		    position: absolute;
+		    width: 100%;
+		    margin: 0;
+		}
+
+		body .chatPanel {
+			top: 104px;
+		    height: 921px;
+		    box-sizing: border-box;
+		    width: 1074px;
+		    position: absolute;
+		    margin: 0;
+		    left: 367px;
+		}
+
+		.channelName {
+			color: black;
+		}
+
+		.column3 input[type=text] {
+			float: right;
+		    padding: 6px;
+		    border: solid;
+		    margin-top: 8px;
+		    margin-right: 16px;
+		    font-size: 14px;
+		    border-width: 1px;
+		    border-radius: 5px;
+		}
+
+		header .dot {
+			height: 20px;
+			width: 20px;
+			display: inline-block;
+			border-radius: 10px;
+			margin: 5px;
+		}
+
+		.close {
+			background-color: red;
+		}
+		.minimize {
+			background-color: yellow;
+		}
+		.maximize {
+			background-color: green;
+		}
+
+		header .groups {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-bottom: 5px;
+		}
+
+		header .image {
+			margin: 10px;
+			border-radius: 10px;
+		}
+
+		header .image {
+		 	display: block;
+		  	width: auto;
+		  	height: auto;
+		}
+
+		.overlay {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 100%;
+			width: 100%;
+			opacity: 0;
+			transition: .5s ease;
+			background-color: #008CBA;
+		}
+
+		.image: hover .overlay {
+			opacity: 1;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<header>
+		<div class="column1">
+			<div class="resizeArea">
+			<div class="dot close" ></div>
+			<div class="dot minimize" ></div>
+			<div class="dot maximize" ></div>
+		</div>
+		<div class="groups">
+			<img src="https://placeimg.com/60/60/any" alt="Avatar" class="image">
+			<img src="https://placeimg.com/60/60/any" alt="Avatar" class="image">
+			<img src="https://placeimg.com/60/60/any" alt="Avatar" class="image">
+			<img src="https://placeimg.com/60/60/any" alt="Avatar" class="image">
+			<img src="https://placeimg.com/60/60/any" alt="Avatar" class="image">
+			<div class="overlay"></div>
+		</div>
+		</div>
+
+		<div class="column3">
+			<h2 class="channelName">#random</h2>
+			<input type="text" placeholder="Search..">
+		</div>
+
+
+		<nav>
+		    <div class="column2">
+			    <h2>DMDL coding for LXDs Fall 19</h2>
+			    <h3>Channels</h3>
+			    <div class="channels">
+				<div>#general</div>
+				<div>#coding</div>
+				<div>#random</div>
+			    </div>
+			    <h3>Direct Message</h3>
+			    <h3>Apps</h3>
+		    </div>
+
+			
+		</nav>
+
+		<main>
+			<div class="chatPanel">
+				<iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+			</div>
+		</main>
+
+
+
+	</header>
+
+
+</body>
+</html>
