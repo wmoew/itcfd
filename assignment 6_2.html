@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div id="container"></div>
+
+	<script type="text/javascript">
+		
+
+		let sneakers = [
+			{
+				brand: "Puma",
+				colors: ["red", "black", "white"]
+			},
+			{
+				brand: "Nike",
+				colors: ["orange", "green"]
+			},
+			{
+				brand: "Adidas",
+				colors: ["purple", "pink", "white"]
+			}
+
+		]
+
+		//locate the div with the id named container using querySelector
+		document.querySelector("#container");
+
+		//create a for loop that loops sneakers array
+		for (var i=0; i < sneakers.length; i++){
+			for (var x=0; x < sneakers.length; x++){
+			const element = document.createElement("h2");
+			element.classList.add("brands");
+			element.innerHTML = sneakers[i][0];
+			sneakers.appendChild(element);
+		}
+		    for (var y=0; y < sneakers.length; y++){
+			const element = document.createElement("h2");
+			element.classList.add("colors");
+			element.innerHTML = sneakers[i][0];
+			sneakers.appendChild(element);
+		}
+	}
+
+		//INSIDE the loop create an h2 element and add the brand name inside of it
+
+		//add another for loop INSIDE of the sneakers loop and loop all the colors.
+
+		//INSIDE the nest loop create button elements
+
+		//add the color value into each button.
+
+	</script>
+
+
+</body>
+</html>
