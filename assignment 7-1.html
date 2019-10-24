@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>challenge:if, else if, else</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let today = new Date();
+		console.log(today.getHours());
+
+		if (today.getHours() < 12 && today.getHours() > 4){
+			console.log("Good morning");
+		}else if(today.getHours() < 18 && today.getHours() > 11){
+			console.log("Good afternoon");
+		}else{
+			console.log("Good everning");
+		}
+	</script>
+</body>
+</html>
