@@ -20,3 +20,5 @@
 *  Week 7 <br>
 7-1 [code](https://github.com/wmoew/itcfd/blob/master/assignment7-1.html) /
 [page](https://wmoew.github.io/itcfd/assignment7-1.html) <br>
+7-2 [code](https://github.com/wmoew/itcfd/tree/master/assignment%207-2) /
+[page](https://wmoew.github.io/itcfd/assignment%207-2/challenge2.html)
