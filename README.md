@@ -17,3 +17,6 @@
 [page](https://wmoew.github.io/itcfd/assignment6_1.html) <br>
 6-2 [code](https://github.com/wmoew/itcfd/blob/master/assignment6_2.html) / [page](https://wmoew.github.io/itcfd/assignment6_2.html) <br>
 6-3 [code](https://github.com/wmoew/itcfd/blob/master/assignment6_3.html) / [page](https://wmoew.github.io/itcfd/assignment6_3.html) 
+*  Week 7 <br>
+7-1 [code](https://github.com/wmoew/itcfd/blob/master/assignment7-1.html) /
+[page](https://wmoew.github.io/itcfd/assignment7-1.html) <br>
