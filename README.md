@@ -22,3 +22,6 @@
 [page](https://wmoew.github.io/itcfd/assignment7-1.html) <br>
 7-2 [code](https://github.com/wmoew/itcfd/tree/master/assignment%207-2) /
 [page](https://wmoew.github.io/itcfd/assignment%207-2/challenge2.html)
+*  Final Project <br>
+[code](https://github.com/wmoew/itcfd/tree/master/AliceinWonderland%20final)/
+[page](https://wmoew.github.io/itcfd/AliceinWonderland%20final/intro.html)
