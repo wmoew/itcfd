@@ -1,0 +1,169 @@
+​<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Solway&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<!-- <a href="../page3/index.html"><div id="arrowright" style="right: 805px; top: 475px;"></div></a>
+	<a href="../page1/index.html"><div id="arrowleft"></div></a>
+ -->
+<!--<button class = "arrow"> -->
+	
+	<!-- <a href="../page3/index.html"><button class="button button2"></button>
+	<a href="../page1/index.html"><button class="button button3"></button> -->
+	<audio id= "audioPlayer">
+    <source id= "wordAudio" type="audio/wav">
+     Your browser does not support the audio tag.
+    </audio>
+
+	<span id="title">Alice In Wonderland</span>
+
+
+		<div id="backgroundimg">
+			<div class="container">
+  				<img src="../images/AliceFrame2.jpg" style="width:100%; height:576px">
+
+  				<div class="centered">
+  					<span>Which  brought  them  back  again  to  the  beginning  of  the 
+  						<span class="word" id="highlight1" draggable="true" ondragstart="drag(event)" style="opacity:100%">conversation</span> .  Alice  felt  a  little 
+  						<span class="word" id="highlight2" draggable="true" ondragstart="drag(event)" style="opacity:100%">irritated</span> at  the 
+  						<span class="word" id="highlight3" draggable="true" ondragstart="drag(event)" style="opacity:100%">Caterpillar</span>  making  such  veryshort   remarks,   and   she   drew   herself   up   and said,  very 
+  						<span class="word" id="highlight4" draggable="true" ondragstart="drag(event)" style="opacity:100%">gravely</span>,  “I  think,  you  ought  to  tell me  who  you are,  first.”
+  					</span>
+  				</div>
+
+  				<span style = "opacity:100%">
+  						<div id="dropZone"> <p> Hard Word Box </p> </div>
+  				</span>
+  				<a href="../aliceinwonderland.html" class="button" id="left">previous</a>
+  				<a href="../page3/index.html" class="button" id="right"> next </a>
+  			</div>
+		</div> 
+
+
+		<script type="text/javascript">
+
+			//dropzone
+		const dropZone = document.querySelector("#dropZone");
+
+		let wordSpans = document.querySelectorAll("span span");
+		console.log(wordSpans)
+
+		for(var i = 0; i < wordSpans.length; i++){
+			wordSpans[i].addEventListener('click', function (event) {
+				callWordAPI(event.currentTarget.innerText);
+			})
+		}
+
+
+			let drag = (event) => {
+				console.log(event.currentTarget);
+				event.dataTransfer.setData('text', event.currentTarget.id);
+			};
+
+			let onDragOver = (event) => {
+				event.preventDefault();
+				console.log(`----DRAGGGING OVER: ${event.currentTarget.id}`)
+			};
+
+			let onDrop = (event) => {
+				let droppedData = event.dataTransfer.getData('text');
+				console.log(`----DROPPED: ${droppedData}`)
+				// let droppedData = event.dataTransfer.getData('text');
+				let newElement = document.createElement("span");
+				newElement.addEventListener('click', function (event) {
+					callWordAPI(event.currentTarget.innerText);
+
+				});
+
+				let draggableElement = document.getElementById(droppedData);
+				newElement.innerText = draggableElement.innerText;
+				console.log(draggableElement.innerText)
+				let dropZone = event.target;
+				dropZone.appendChild(newElement);
+				}
+
+
+			dropZone.addEventListener('dragover', onDragOver)
+			dropZone.addEventListener('drop', onDrop)
+
+
+		// Create click event that calls on class word through an array, then connected API function to add audio when specific word was clicked
+		const clickWords = document.querySelectorAll('.word');
+		console.log(clickWords);
+		for (var i = 0; i < clickWords.length; i++) {
+			console.log(clickWords[i]);
+			clickWords[i].addEventListener('click', function (event) {
+				callWordAPI(event.currentTarget.innerText);
+
+			});
+
+		}
+		
+
+		//Added API to a function
+		function callWordAPI (word){
+			console.log(word);
+
+			// Created a dynamic URL based on word selection
+			const url = `https://dictionaryapi.com/api/v3/references/learners/json/${word}?key=9c3a9b28-9b91-43bf-bac6-d39c1a35f8d3`;
+					fetch(url, {
+			'Content-Type': 'application/json'
+		})
+
+		.then((response) => {
+			console.log(response);
+			return response.json()
+		})
+
+		.then((data) => {
+			
+			//https://media.merriam-webster.com/soundc11/h/heart001.wav
+
+			//First get filename store in a variable
+			//https://media.merriam-webster.com/soundc11/h/heart001.wav
+			console.log(data[0].hwi.prs[0].sound.audio);
+			//console.log(data);
+
+			//get first letter of that name. Use Substring Strore in variable (firstLetter)
+			let fullWord = data[0].hwi.prs[0].sound.audio;
+			console.log(fullWord.substring(0,1));
+			let firstLetter = fullWord.substring(0,1);
+			//build URL adding in FirstLetter and FullName
+			let url = `https://media.merriam-webster.com/soundc11/${firstLetter}/${fullWord}.wav`
+			//ex.  `string ${variableName} more string`
+
+			console.log(url);
+			// console.log(fullWord.substring(0,1));
+
+			//https://media.merriam-webster.com/soundc11/h/heart001.wav
+
+			let audioPlayer = document.querySelector("#audioPlayer");
+
+			//function to play video
+			let playAudio = () => {
+				audioPlayer.play();
+			}
+
+			//Load and play from audio from audio tag
+			let loadAudio = () => {
+				document.querySelector("#wordAudio").src = url;
+				audioPlayer.load();
+				playAudio();
+
+			}
+			
+			loadAudio()
+
+		});
+
+		}
+
+	</script>
+</body>
+
+
+</html>
